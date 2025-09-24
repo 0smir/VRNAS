@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="title">
     Home page
   </div>
 </template>
@@ -8,6 +8,8 @@
 
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss" >
+.title {
+  font-family: $font-main;
+}
 </style>
