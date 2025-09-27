@@ -1,0 +1,70 @@
+@use '../index' as *;
+
+
+.btn {
+	display: flex;
+	justify-content: center;
+	padding: 15px 30px;
+	border: 1px solid;
+	border-image: $border_with_gradient;
+	color: $text_color;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	&:hover {
+		transform: scale(1.04);
+	}
+
+	&--outline {
+		background-color: transparent;
+		border: 1px dotted;
+		border-image: $border_with_gradient;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-image: $gradient; 
+			color: $white;
+		}
+	}
+
+	&--filled {
+		background-image: $gradient;
+		color: $white;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-image: none;
+			background-color: $primery_purpul; 
+			color: $white;
+		}
+	}
+
+	&.btn-more {
+		color: #fff;
+	}
+
+	&.btn-close {
+		align-items: center;
+		width: 35px;
+		height: 35px;
+		padding: 0 !important;
+		border-radius: $border_radius_small;
+		color: $white;
+		font-size: 42px !important;
+
+		&:hover {
+			border-radius: $border_radius_small;
+		} 
+	}
+
+	& > .icon--close {
+		display: inline-block;
+		font-size: 20px;
+		transform: rotate(45deg);
+	}
+}
+
+

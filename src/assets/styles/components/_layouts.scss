@@ -1,0 +1,25 @@
+@use '../index' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  margin: 0;
+  scrollbar-gutter: stable;
+}
+
+body {
+  min-height: 100vh;
+  padding: 0;
+  background-color: $black_100;
+  font-family: $font-main;
+}
