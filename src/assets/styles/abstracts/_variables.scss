@@ -1,8 +1,8 @@
 $font-main: Chakra Petch, 'Helvetica', 'Arial', sans-serif;
 
 //====privat colors======
-$_gradient_blue: #0CBAF1;
-$_gradient_purpul: #E95CE9;
+$-gradient_blue: #0CBAF1;
+$-gradient_purpul: #E95CE9;
 
 //====colors======
 $primery_blue: #0CBAF1;
@@ -23,8 +23,8 @@ $warning_color: #FACC15;
 
 
 //==========gradients==============
-$gradient: linear-gradient(90deg, $_gradient_blue 0%, $_gradient_purpul 100%);
-$bg_half_transparent_gradient: linear-gradient(90deg, rgba($_gradient_blue, .2) 0%, rgba($_gradient_purpul, .2)100%);
+$gradient: linear-gradient(90deg, $-gradient_blue 0%, $-gradient_purpul 100%);
+$bg_half_transparent_gradient: linear-gradient(90deg, rgba($-gradient_blue, .2) 0%, rgba($-gradient_purpul, .2)100%);
 
 $border_color_gray: rgba(255, 255, 255, 0.2);
 $banner_bg_color: $gray;
@@ -39,5 +39,5 @@ $text_color_gray: $gray_light;
 $border_radius: 4px;
 $border_radius_small: 2px;
 $border_gray: 1px solid rgba(255, 255, 255, 0.3);
-$border_with_gradient: linear-gradient(90deg, $_gradient_blue 0%, $_gradient_purpul 100%) 1;
+$border_with_gradient: linear-gradient(90deg, $-gradient_blue 0%, $-gradient_purpul 100%) 1;
 $border_gray_gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%) 1;
