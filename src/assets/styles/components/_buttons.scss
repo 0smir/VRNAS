@@ -3,45 +3,49 @@
 .btn {
   display: flex;
   justify-content: center;
-  padding: 15px 30px;
+  background-color: transparent;
   border: 1px solid;
-  border-image: $border_with_gradient;
   color: $text_color;
   font-size: 16px;
+  font-weight: 300;
   text-transform: uppercase;
-  text-decoration: none;
   transition: all 0.35s ease-in-out;
 
-  &:hover,
-  &:focus {
-    transform: scale(1.04);
-    transition: transform 0.35s ease-in-out;
-  }
-
-  &--outline {
-    background-color: transparent;
-    border: 1px dotted;
+  &.btn-primary {
+    padding: 15px 30px;
     border-image: $border_with_gradient;
 
     &:hover,
-    &:focus,
-    &:active {
+    &:focus {
+      transform: scale(1.04);
+      transition: transform 0.35s ease-in-out;
+    }
+
+    &--outline {
+      background-color: transparent;
+
+      border-image: $border_with_gradient;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-image: $gradient;
+        color: $white;
+        transition: all 0.35s ease-in-out;
+      }
+    }
+
+    &--filled {
       background-image: $gradient;
       color: $white;
-      transition: all 0.35s ease-in-out;
-    }
-  }
 
-  &--filled {
-    background-image: $gradient;
-    color: $white;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-image: none;
-      background-color: $primery_purpul;
-      color: $white;
+      &:hover,
+      &:focus,
+      &:active {
+        background-image: none;
+        background-color: $primery_purpul;
+        color: $white;
+      }
     }
   }
 
