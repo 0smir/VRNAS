@@ -3,9 +3,9 @@ import { RouterLink } from 'vue-router';
 import { gsap } from 'gsap';
 import SvgIcon from '@/components/base_components/SvgIcon.vue';
 import BaseButton from '@/components/base_components/BaseButton.vue';
+import LocaleChanger from '@/components/base_components/LocaleChanger.vue';
 
 const FORCE = 120;
-
 const magneticText = (e) => {
   let targetLink = e.currentTarget;
   let span = e.currentTarget.querySelector('.magnetic-text');
@@ -54,7 +54,9 @@ const moveTarget = (e, link, textEl, FORCE) => {
               @mousemove="magneticText"
               @mouseleave="clearMagnetic"
             >
-              <span class="magnetic-text">Home</span>
+              <span class="magnetic-text">
+                {{ $t('header.navigation.link_home') }}
+              </span>
             </RouterLink>
           </li>
           <li class="nav__list-item">
@@ -64,7 +66,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
               @mousemove="magneticText"
               @mouseleave="clearMagnetic"
             >
-              <span class="magnetic-text">About</span>
+              <span class="magnetic-text">{{ $t('header.navigation.link_about') }}</span>
             </RouterLink>
           </li>
           <li class="nav__list-item">
@@ -74,13 +76,13 @@ const moveTarget = (e, link, textEl, FORCE) => {
               @mousemove="magneticText"
               @mouseleave="clearMagnetic"
             >
-              <span class="magnetic-text">Service</span>
+              <span class="magnetic-text">{{ $t('header.navigation.link_service') }}</span>
             </RouterLink>
           </li>
           <li class="nav__list-item">
             <div class="dropdown">
               <BaseButton class="btn dropdown__btn">
-                <span class="dropdown__btn-text">Blog</span>
+                <span class="dropdown__btn-text">{{ $t('header.buttons.btn_pages') }}</span>
                 <SvgIcon class="icon icon--small" name="chevron-down" />
               </BaseButton>
             </div>
@@ -88,7 +90,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
           <li class="nav__list-item relative">
             <div class="dropdown">
               <BaseButton class="btn dropdown__btn">
-                <span class="dropdown__btn-text">Blog</span>
+                <span class="dropdown__btn-text">{{ $t('header.buttons.btn_blog') }}</span>
                 <SvgIcon class="icon icon--small" name="chevron-down" />
               </BaseButton>
               <ul class="dropdown__list">
@@ -100,10 +102,10 @@ const moveTarget = (e, link, textEl, FORCE) => {
           </li>
         </ul>
       </nav>
-      <BaseButton
-        class="btn btn-primary btn-primary--outline btn-contact header__btn-contact"
-        >Contact us</BaseButton
-      >
+      <LocaleChanger class="header__locale-switcher" />
+      <BaseButton class="btn btn-primary btn-primary--outline btn-contact header__btn-contact">
+        {{ $t('header.buttons.btn_contact') }}
+      </BaseButton>
     </div>
   </header>
 </template>
@@ -159,6 +161,14 @@ const moveTarget = (e, link, textEl, FORCE) => {
     .magnetic-text {
       display: inline-block;
       pointer-events: none;
+    }
+  }
+
+  &__locale-switcher {
+    display: none;
+    @media (min-width: $md) {
+      display: block;
+      margin-right: 15px;
     }
   }
 }
