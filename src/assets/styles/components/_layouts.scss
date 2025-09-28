@@ -18,12 +18,43 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  position: relative;
+  height: 100dvh;
   padding: 0;
   background-color: $black_100;
   font-family: $font-main;
   color: $text_color;
   font-size: 16px;
+
+  &:after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 355px;
+    background-image: url('@/assets/images/main_bg.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top right;
+    animation: fade-glow 3s infinite;
+    z-index: -1;
+  }
+}
+
+@keyframes fade-glow {
+  0% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 0px rgba($primery_purpul, 0.8));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba($primery_blue, 0.8));
+  }
+  100% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 0px rgba($primery_purpul, 0.8));
+  }
 }
 
 ul,
