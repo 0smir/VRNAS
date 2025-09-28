@@ -1,7 +1,43 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import SvgIcon from '../base_components/SvgIcon.vue';
-import BaseButton from '../base_components/BaseButton.vue';
+import { gsap } from 'gsap';
+import SvgIcon from '@/components/base_components/SvgIcon.vue';
+import BaseButton from '@/components/base_components/BaseButton.vue';
+
+const FORCE = 120;
+
+const magneticText = (e) => {
+  let targetLink = e.currentTarget;
+  let span = e.currentTarget.querySelector('.magnetic-text');
+  moveTarget(e, targetLink, span, FORCE);
+};
+
+const clearMagnetic = (e) => {
+  let span = e.currentTarget.querySelector('.magnetic-text');
+  leaveTarget(span);
+};
+
+const leaveTarget = (span) => {
+  gsap.to(span, {
+    x: 0,
+    y: 0,
+    duration: 0.3,
+    ease: 'power2.out',
+  });
+};
+
+const moveTarget = (e, link, textEl, FORCE) => {
+  let boundingRect = link.getBoundingClientRect();
+  let relX = e.pageX - boundingRect.left;
+  let relY = e.pageY - boundingRect.top;
+
+  gsap.to(textEl, {
+    x: ((relX - boundingRect.width / 2) / boundingRect.width) * FORCE,
+    y: ((relY - boundingRect.height / 2) / boundingRect.width) * FORCE,
+    duration: 0.3,
+    ease: 'power2.easeOut',
+  });
+};
 </script>
 <template>
   <header class="header">
@@ -12,17 +48,34 @@ import BaseButton from '../base_components/BaseButton.vue';
       <nav class="nav header__nav">
         <ul class="nav__list header__nav-list">
           <li class="nav__list-item">
-            <RouterLink to="/" class="link header__nav-link">Home</RouterLink>
+            <RouterLink
+              to="/"
+              class="link nav__link header__nav-link js-magnetic"
+              @mousemove="magneticText"
+              @mouseleave="clearMagnetic"
+            >
+              <span class="magnetic-text">Home</span>
+            </RouterLink>
           </li>
           <li class="nav__list-item">
-            <RouterLink to="/about" class="link header__nav-link"
-              >About</RouterLink
+            <RouterLink
+              to="/about"
+              class="link nav__link header__nav-link js-magnetic"
+              @mousemove="magneticText"
+              @mouseleave="clearMagnetic"
             >
+              <span class="magnetic-text">About</span>
+            </RouterLink>
           </li>
           <li class="nav__list-item">
-            <RouterLink to="/service" class="link header__nav-link"
-              >Service</RouterLink
+            <RouterLink
+              to="/service"
+              class="link nav__link header__nav-link js-magnetic"
+              @mousemove="magneticText"
+              @mouseleave="clearMagnetic"
             >
+              <span class="magnetic-text">Service</span>
+            </RouterLink>
           </li>
           <li class="nav__list-item">
             <div class="dropdown">
@@ -48,7 +101,7 @@ import BaseButton from '../base_components/BaseButton.vue';
         </ul>
       </nav>
       <BaseButton
-        class="btn btn-primary--outline btn-contact header__btn-contact"
+        class="btn btn-primary btn-primary--outline btn-contact header__btn-contact"
         >Contact us</BaseButton
       >
     </div>
@@ -92,7 +145,8 @@ import BaseButton from '../base_components/BaseButton.vue';
   }
 
   &__nav-link {
-    display: flex;
+    position: relative;
+    display: block;
     padding: 16px 8px;
     min-width: 45px;
     font-weight: 300;
@@ -100,6 +154,11 @@ import BaseButton from '../base_components/BaseButton.vue';
 
     &.router-link-exact-active {
       font-weight: 500;
+    }
+
+    .magnetic-text {
+      display: inline-block;
+      pointer-events: none;
     }
   }
 }
@@ -110,6 +169,7 @@ import BaseButton from '../base_components/BaseButton.vue';
   &__btn {
     padding: 16px 8px;
     border: none;
+    text-transform: capitalize;
   }
 
   &__btn-text {
