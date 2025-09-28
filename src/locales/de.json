@@ -1,0 +1,14 @@
+{
+  "header": {
+    "navigation": {
+      "link_home": "Heim",
+      "link_about": "Über uns",
+      "link_service": "Service"
+    },
+    "buttons": {
+      "btn_contact": "Kontaktieren Sie uns",
+      "btn_pages": "Seiten",
+      "btn_blog": "Der Blog"
+    }
+  }
+}
