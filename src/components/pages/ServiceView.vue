@@ -8,7 +8,6 @@ const { t } = useI18n();
 const router = useRoute();
 
 const breadcrumbsList = router.meta.breadcrumbs;
-console.log(breadcrumbsList);
 
 </script>
 
@@ -18,9 +17,12 @@ console.log(breadcrumbsList);
 			<Breadcrumbs :breadcrumbs="breadcrumbsList"/>
 		</PageHeader>
 	</div>
-	<div class="loader__wrapper">
-		<loader />
-	</div>
+	<section class="section">
+		<div class="container">
+			<Loader />
+		</div>
+	</section>
+		
 </template>
 
 <style lang="scss">

@@ -1,13 +1,28 @@
-<template>
-  <div>
-    <h1 class="title page__title">Blog page</h1>
-    <p>with list of articles</p>
-  </div>
-</template>
-
 <script setup>
+import PageHeader from '@/components/UI/ThePageHeader.vue';
+import Breadcrumbs from '@/components/UI/TheBreadcrumbs.vue';
+import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
+
+const { t } = useI18n();
+const router = useRoute();
+
+const breadcrumbsList = router.meta.breadcrumbs;
 
 </script>
+
+<template>
+  <div class="container blog__container">
+		<PageHeader :pageTitle="t('pages.blog.title')" >
+			<Breadcrumbs :breadcrumbs="breadcrumbsList"/>
+		</PageHeader>
+	</div>
+	<section class="section">
+		<div class="container">
+			<Loader />
+		</div>
+	</section>
+</template>
 
 <style lang="scss" scoped>
 
