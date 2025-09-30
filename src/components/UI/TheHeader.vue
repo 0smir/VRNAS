@@ -80,17 +80,19 @@ const moveTarget = (e, link, textEl, FORCE) => {
             </RouterLink>
           </li>
           <li class="nav__list-item">
-            <div class="dropdown">
-              <BaseButton class="btn dropdown__btn">
-                <span class="dropdown__btn-text">{{ $t('buttons.btn_pages') }}</span>
-                <SvgIcon class="icon icon--small" name="chevron-down" />
-              </BaseButton>
-            </div>
+            <RouterLink
+              to="/blog"
+              class="link nav__link header__nav-link js-magnetic"
+              @mousemove="magneticText"
+              @mouseleave="clearMagnetic"
+            >
+              <span class="magnetic-text">{{ $t('navigation.link_blog') }}</span>
+            </RouterLink>
           </li>
           <li class="nav__list-item relative">
             <div class="dropdown">
               <BaseButton class="btn dropdown__btn">
-                <span class="dropdown__btn-text">{{ $t('buttons.btn_blog') }}</span>
+                <span class="dropdown__btn-text">{{ $t('buttons.btn_pages') }}</span>
                 <SvgIcon class="icon icon--small" name="chevron-down" />
               </BaseButton>
               <ul class="dropdown__list">
@@ -112,6 +114,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
 
 <style lang="scss">
 .header {
+  position: sticky;
   padding-block: 32px;
 
   &__container {
