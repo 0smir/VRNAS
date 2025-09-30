@@ -55,7 +55,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
               @mouseleave="clearMagnetic"
             >
               <span class="magnetic-text">
-                {{ $t('header.navigation.link_home') }}
+                {{ $t('navigation.link_home') }}
               </span>
             </RouterLink>
           </li>
@@ -66,7 +66,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
               @mousemove="magneticText"
               @mouseleave="clearMagnetic"
             >
-              <span class="magnetic-text">{{ $t('header.navigation.link_about') }}</span>
+              <span class="magnetic-text">{{ $t('navigation.link_about') }}</span>
             </RouterLink>
           </li>
           <li class="nav__list-item">
@@ -76,13 +76,13 @@ const moveTarget = (e, link, textEl, FORCE) => {
               @mousemove="magneticText"
               @mouseleave="clearMagnetic"
             >
-              <span class="magnetic-text">{{ $t('header.navigation.link_service') }}</span>
+              <span class="magnetic-text">{{ $t('navigation.link_service') }}</span>
             </RouterLink>
           </li>
           <li class="nav__list-item">
             <div class="dropdown">
               <BaseButton class="btn dropdown__btn">
-                <span class="dropdown__btn-text">{{ $t('header.buttons.btn_pages') }}</span>
+                <span class="dropdown__btn-text">{{ $t('buttons.btn_pages') }}</span>
                 <SvgIcon class="icon icon--small" name="chevron-down" />
               </BaseButton>
             </div>
@@ -90,7 +90,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
           <li class="nav__list-item relative">
             <div class="dropdown">
               <BaseButton class="btn dropdown__btn">
-                <span class="dropdown__btn-text">{{ $t('header.buttons.btn_blog') }}</span>
+                <span class="dropdown__btn-text">{{ $t('buttons.btn_blog') }}</span>
                 <SvgIcon class="icon icon--small" name="chevron-down" />
               </BaseButton>
               <ul class="dropdown__list">
@@ -104,7 +104,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
       </nav>
       <LocaleChanger class="header__locale-switcher" />
       <BaseButton class="btn btn-primary btn-primary--outline btn-contact header__btn-contact">
-        {{ $t('header.buttons.btn_contact') }}
+        {{ $t('buttons.btn_contact') }}
       </BaseButton>
     </div>
   </header>
@@ -153,6 +153,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
     min-width: 45px;
     font-weight: 300;
     color: $white;
+    border: 1px solid red;
 
     &.router-link-exact-active {
       font-weight: 500;
