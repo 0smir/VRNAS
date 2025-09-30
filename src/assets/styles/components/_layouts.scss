@@ -47,10 +47,12 @@ body {
     opacity: 0.95;
     filter: drop-shadow(0 0 0px rgba($primery_purpul, 0.8));
   }
+
   50% {
     opacity: 1;
     filter: drop-shadow(0 0 10px rgba($primery_blue, 0.8));
   }
+
   100% {
     opacity: 0.95;
     filter: drop-shadow(0 0 0px rgba($primery_purpul, 0.8));
@@ -71,4 +73,8 @@ a {
   max-width: 1230px;
   padding-inline: 15px;
   margin: 0 auto;
+}
+
+.title {
+  color: $white;
 }
