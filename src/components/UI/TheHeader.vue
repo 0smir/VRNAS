@@ -151,12 +151,10 @@ const moveTarget = (e, link, textEl, FORCE) => {
     display: block;
     padding: 16px 8px;
     min-width: 45px;
-    font-weight: 300;
     color: $white;
-    border: 1px solid red;
 
     &.router-link-exact-active {
-      font-weight: 500;
+      font-weight: 700;
     }
 
     .magnetic-text {
