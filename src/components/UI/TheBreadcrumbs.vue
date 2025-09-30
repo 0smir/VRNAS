@@ -40,6 +40,11 @@ const props = defineProps({
   }
   &__link {
     padding: 8px 5px 8px 5px;
+    
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
     &-text {
       margin-right: 10px;
     }
