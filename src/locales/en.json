@@ -1,14 +1,38 @@
 {
-  "header": {
-    "navigation": {
-      "link_home": "Home",
-      "link_about": "About us",
-      "link_service": "Service"
+  "navigation": {
+    "link_home": "Home",
+    "link_about": "About us",
+    "link_service": "Service",
+    "link_contact": "Contact us",
+    "link_faq": "FAQ",
+    "link_blog": "Blog",
+    "link_team": "Our Team",
+    "link_terms": "Tems & Conditions",
+    "link_privacy": "Privacy Policy",
+    "link_pricing": "Pricing Plan"
+  },
+  "buttons": {
+    "btn_contact": "Contact us",
+    "btn_pages": "Pages",
+    "btn_blog": "Blog"
+  },
+  "footer": {
+    "nav_sections": {
+      "quick_links": "Quicklinks",
+      "support_links": "Support",
+      "help_links": "Need Help?"
     },
-    "buttons": {
-      "btn_contact": "Contact us",
-      "btn_pages": "Pages",
-      "btn_blog": "Blog"
+    "copyright": "<span>&#169;</span> Copyright {year}, All Rights Reserved"
+  },
+  "pages": {
+    "home": {
+      "title": "Home"
+    },
+    "about": {
+      "title": "About us"
+    },
+    "service": {
+      "title": "Services"
     }
   }
 }
