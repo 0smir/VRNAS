@@ -42,7 +42,7 @@ const moveTarget = (e, link, textEl, FORCE) => {
 <template>
   <header class="header">
     <div class="container header__container">
-      <RouterLink to="/" class="link__logo header__logo">
+      <RouterLink to="/" class="link__logo header__logo" >
         <SvgIcon class="icon icon--logo" name="logo-big" />
       </RouterLink>
       <nav class="nav header__nav">
@@ -123,6 +123,8 @@ const moveTarget = (e, link, textEl, FORCE) => {
   }
 
   &__logo {
+    width: 101px;
+    height: 30px;
     margin-right: auto;
 
     @media (min-width: $md) {
