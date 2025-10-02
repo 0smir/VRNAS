@@ -1,4 +1,7 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+import BaseButton from './base_components/BaseButton.vue';
+
 const props = defineProps({
   serviceData: {
     type: Object,
@@ -16,12 +19,18 @@ const props = defineProps({
     <div class="description-wrapper service-item__description-wrapper">
       <p class="description service-item__description">{{ serviceData.description }}</p>
     </div>
+    <div class="service-item__overlay">
+      <RouterLink class="btn btn-primary btn-primary--outline service-item__link" to="/"
+        >Learn more</RouterLink
+      >
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .service-item {
   &__panel {
+    position: relative;
     display: flex;
     flex-direction: column;
     border: 1px solid;
@@ -31,10 +40,20 @@ const props = defineProps({
     height: 100%;
     padding: 40px;
     overflow: hidden;
+    transition: border-image 0.05s 0.35s ease;
 
     &:hover,
     &:focus {
       border-image: $border_with_gradient;
+      transition: border-image 0.5s 0.35s ease;
+      .service-item__overlay {
+        transform: translateY(0);
+        transition: transform 0.05s 0.35s ease;
+      }
+      .service-item__link {
+        opacity: 1;
+        transition: opacity 0.09s 0.5s ease;
+      }
     }
     @media (min-width: $md) {
       padding: 40px;
@@ -59,6 +78,25 @@ const props = defineProps({
   &__description {
     line-height: 2;
     font-size: 14px;
+  }
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    transform: translateY(9999px);
+    background-image: $gradient_gray;
+    transition: transform 0.05s 0.7s ease;
+
+    @media (min-width: $md) {
+      padding: 40px;
+    }
+  }
+  &__link {
+    opacity: 0;
+    transition: opacity 0.09s 0.5s ease;
   }
 }
 </style>
