@@ -26,7 +26,9 @@ body {
   color: $text_color;
   font-size: 16px;
   font-weight: 300;
-
+}
+.wave {
+  position: relative;
   &:after {
     position: absolute;
     inset: 0;
@@ -83,4 +85,12 @@ a {
 
 .section {
   padding: 20px 0;
+}
+
+.subtitle {
+  color: transparent;
+  background: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
